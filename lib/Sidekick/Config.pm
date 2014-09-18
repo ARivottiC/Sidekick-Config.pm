@@ -6,7 +6,7 @@ use v5.10;
 use strict;
 use warnings;
 
-use Sidekick::Data ();
+use Sidekick::Accessor ();
 use Config::Any ();
 use Hash::Merge ();
 use Log::Log4perl qw(:nowarn);
@@ -29,7 +29,7 @@ sub new {
         };
     }
 
-    return Sidekick::Data->new(
+    return Sidekick::Accessor->new(
             'ro' => 1, 'data' => $class->$merge_hashes( @hashes )
         );
 }

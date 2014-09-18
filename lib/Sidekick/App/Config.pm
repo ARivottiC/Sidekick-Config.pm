@@ -26,6 +26,7 @@ sub init {
     my $root = $self->root || '/';
 
     $Config{ $self } = Sidekick::Config->new(
+            $self->defaults,
             sprintf('%s/%s/etc/config.yaml', $root, $name ),
             ( $arg{'config'} || {} ),
         );
